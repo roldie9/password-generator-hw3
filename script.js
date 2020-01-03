@@ -12,6 +12,7 @@ const specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 function generatePassword() {
     let password = [];
     let passwordChars = [];
+    let passwordText = '';
 
 
     let length = prompt("How many characters do you want?");
@@ -44,19 +45,22 @@ function generatePassword() {
         }
     }
 
-}
+
     for (var i = 0; i <= length; i++) {
         let passwordx = Math.floor(Math.random() * length);
         let passChar = password[passwordx];
-        passwordChars.push(passChar);
+        passwordChars.push(passwordx);
 
     }
 
     writePassword(passwordChars);
 
 
-function writePassword() {
-  var password = generatePassword();
+}
+   
+
+function writePassword(passwordText) {
+  var password = passwordText();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;

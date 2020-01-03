@@ -11,18 +11,48 @@ const specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 function generatePassword() {
     let password = [];
-    let length = prompt("How many characters do you want?")
+    let passwordChars = [];
 
-    let lowerCase = confirm("Do you want Lower Case characters?")
-    let upperCase = confirm("Do you want Upper Case characters?")
-    let numberChar = confirm("Do you want Numerical characters?")
-    let specialChar = confirm("Do you want Special characters?")
+
+    let length = prompt("How many characters do you want?");
+    let lower = confirm("Do you want Lower Case characters?");
+    let upper = confirm("Do you want Upper Case characters?");
+    let number = confirm("Do you want Numerical characters?");
+    let special = confirm("Do you want Special characters?");
+
+    if (lower === true) {
+        for (x of lowerCase) {
+            password.push(x);
+        }
+    }
+
+    if (upper === true) {
+        for (x of upperCase) {
+            password.push(x);
+        }
+    }
+
+    if (number === true) {
+        for (x of numberChar) {
+            password.push(x);
+        }
+    }
+
+    if (special === true) {
+        for (x of specialChar) {
+            password.push(x);
+        }
+    }
 
 }
-    for (var i = 0; i <= password.length; i++) {
-        password = password + lowerCase.charAt(Math.floor(Math.random() * Math.floor(password.length - 1)));
+    for (var i = 0; i <= length; i++) {
+        let passwordx = Math.floor(Math.random() * length);
+        let passChar = password[passwordx];
+        passwordChars.push(passChar);
 
     }
+
+    writePassword(passwordChars);
 
 
 function writePassword() {

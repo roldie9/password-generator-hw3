@@ -3,15 +3,27 @@ var generateBtn = document.querySelector("#generate");
 
 const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-const numberChar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+const numberChar = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 const specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')']
 
 
 // Write password to the #password input
 
 function generatePassword() {
-    console.log(lowerCaseChar);
+    let password = [];
+    let length = prompt("How many characters do you want?")
+
+    let lowerCase = confirm("Do you want Lower Case characters?")
+    let upperCase = confirm("Do you want Upper Case characters?")
+    let numberChar = confirm("Do you want Numerical characters?")
+    let specialChar = confirm("Do you want Special characters?")
+
 }
+    for (var i = 0; i <= password.length; i++) {
+        password = password + lowerCase.charAt(Math.floor(Math.random() * Math.floor(password.length - 1)));
+
+    }
+
 
 function writePassword() {
   var password = generatePassword();

@@ -40,6 +40,7 @@ function generatePassword() {
     }
 
     if (special === true) {
+
         for (x of specialChar) {
             password.push(x);
         }
@@ -47,7 +48,7 @@ function generatePassword() {
 
 
     for (var i = 0; i <= length; i++) {
-        let passwordx = Math.floor(Math.random() * length);
+        let passwordx = Math.floor(Math.random() * passwordText.length);
         let passwordItem = password[passwordx];
         
         passwordChars.push(passwordItem);
@@ -76,6 +77,6 @@ function copyToClipboard() {
 }
 
 // Add event listener to generate button
- generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", generatePassword);
 
 // BONUS EVENT LISTENER

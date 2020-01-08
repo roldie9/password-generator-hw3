@@ -48,8 +48,9 @@ function generatePassword() {
 
     for (var i = 0; i <= length; i++) {
         let passwordx = Math.floor(Math.random() * length);
-        let passChar = password[passwordx];
-        passwordChars.push(passwordx);
+        let passwordItem = password[passwordx];
+        
+        passwordChars.push(passwordItem);
 
     }
 
@@ -60,13 +61,14 @@ function generatePassword() {
    
 
 function writePassword(passwordText) {
-  var password = passwordText();
+  var password = passwordText;
   var passwordText = document.querySelector("#password");
+console.log(password)
 
-  passwordText.value = password;
+  passwordText.value = password.join('');
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
+ // copyBtn.removeAttribute("disabled");
+ // copyBtn.focus();
 }
 
 function copyToClipboard() {
@@ -74,6 +76,6 @@ function copyToClipboard() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+ generateBtn.addEventListener("click", generatePassword);
 
 // BONUS EVENT LISTENER

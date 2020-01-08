@@ -47,8 +47,8 @@ function generatePassword() {
     }
 
 
-    for (var i = 0; i <= length; i++) {
-        let passwordx = Math.floor(Math.random() * passwordText.length);
+    for (var i = 0; i < length; i++) {
+        let passwordx = Math.floor(Math.random() * length);
         let passwordItem = password[passwordx];
         
         passwordChars.push(passwordItem);
@@ -57,14 +57,13 @@ function generatePassword() {
 
     writePassword(passwordChars);
 
-
 }
    
 
 function writePassword(passwordText) {
   var password = passwordText;
   var passwordText = document.querySelector("#password");
-console.log(password)
+
 
   passwordText.value = password.join('');
 

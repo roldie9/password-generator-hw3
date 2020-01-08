@@ -72,7 +72,13 @@ function writePassword(passwordText) {
 }
 
 function copyToClipboard() {
-  // BONUS 
+    var copyText = document.getElementById("passwordText");
+      
+    copyText.select();
+      
+    document.execCommand("copy");
+      
+    alert("Copied the text: " + copyText.value);
 }
 
 // Add event listener to generate button
